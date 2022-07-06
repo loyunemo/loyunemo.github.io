@@ -180,6 +180,12 @@
                     字
                 </li>
                 
+                    <li id="/2022/07/03/CUDA/" class="leancloud_visitors" data-flag-title="CUDA">
+                        <i class="fa fa-eye"></i>
+                        <span class="leancloud-visitors-count"> </span> 次阅读
+                    </li>
+                    
+                
             </ul>
         </header>
         <div class="kratos-post-content">
@@ -323,6 +329,30 @@ CUDA给我的理解是如何通过CUDA的编程管理，让各个GPU存在的计
             
         </nav>
     
+    
+        <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: 'n9rzFF0mXfhzzt3KuNuVlwzG-gzGzoHsz',
+                appKey: 'bIYyOSR3EbXLVBbLtbuUaCzy',
+                visitor: true,
+                enableQQ: false,
+                path: '/2022/07/03/CUDA/'
+            });
+        }
+        if (typeof Valine === 'undefined') {
+            const src = 'https://unpkg.com/valine/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
     
 </article>
 
