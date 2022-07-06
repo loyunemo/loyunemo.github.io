@@ -177,7 +177,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~9.14K
+                        ~8.73K
                     
                     字
                 </li>
@@ -215,67 +215,15 @@ void DrawLine(double dx, double dy)：在当前画笔位置上绘制并移动画
 <p>project1主要是设计一个绘制系统，画一个图。这个em其实简单到我都不好意思拿上去展示了（这分绝对很低啊）<br>
 主要的实现关键是要设置一个 extern double类型的数据，记录画笔目前朝向的角度，extern 主要是为了让多文件的情况下主函数能够访问角度数据，这样方便自己建立相应的.c文件和c header文件，将所有自己写的函数写在里面，方便以后要用时可以方便迁移调用。各个函数代码如下：</p>
 <h2 id="方向笔"><a class="markdownIt-Anchor" href="#方向笔"></a> 方向笔：</h2>
-<pre class="language-c" data-language="c"><code class="language-c">
-void forward(double distance)&#x2F;*向当前画笔方向画distance的距离*&#x2F;
-&#123; 
-    double x,y;
-	x&#x3D;distance*cos(anglenatnow&#x2F;180.0*PI) ;
-	y&#x3D;distance*sin(anglenatnow&#x2F;180.0*PI) ;
-	DrawLine(x,y);
-	return;
-&#125;</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">forward</span><span class="params">(<span class="type">double</span> distance)</span><span class="comment">/*向当前画笔方向画distance的距离*/</span></span><br><span class="line">&#123; </span><br><span class="line">    <span class="type">double</span> x,y;</span><br><span class="line">	x=distance*<span class="built_in">cos</span>(anglenatnow/<span class="number">180.0</span>*PI) ;</span><br><span class="line">	y=distance*<span class="built_in">sin</span>(anglenatnow/<span class="number">180.0</span>*PI) ;</span><br><span class="line">	DrawLine(x,y);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="画笔转向"><a class="markdownIt-Anchor" href="#画笔转向"></a> 画笔转向</h2>
-<pre class="language-c" data-language="c"><code class="language-c">
-void turn (double angle)&#x2F;*将画笔旋转angle角度*&#x2F;
-&#123;
-	anglenatnow+&#x3D;angle;
-	return;
-&#125;</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">turn</span> <span class="params">(<span class="type">double</span> angle)</span><span class="comment">/*将画笔旋转angle角度*/</span></span><br><span class="line">&#123;</span><br><span class="line">	anglenatnow+=angle;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="连接两点"><a class="markdownIt-Anchor" href="#连接两点"></a> 连接两点</h2>
-<pre class="language-c" data-language="c"><code class="language-c">
-void drawconnect(double x1,double y1,double x2,double y2).&#x2F;*将坐标(x1，y1),(x2,y2)的两个点连起来*&#x2F;
-&#123;
-    nowpoint now;
-    now.x&#x3D;GetCurrentX();
-    now.y&#x3D;GetCurrentY();
-    MovePen(x1,y1);
-    DrawLine(x2-x1,y2-y1);
-    MovePen(now.x,now.y);
-    return;
-&#125;
-
-
-void move(double distance)&#x2F;*向画笔当前方移动一段距离但不划线*&#x2F;
-&#123;
-	double x,y;
-	x&#x3D;GetCurrentX()+distance*cos(anglenatnow&#x2F;180.0*PI) ;
-	y&#x3D;GetCurrentY()+distance*sin(anglenatnow&#x2F;180.0*PI) ;
-	MovePen(x,y);
-	return;
-&#125;</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">drawconnect</span><span class="params">(<span class="type">double</span> x1,<span class="type">double</span> y1,<span class="type">double</span> x2,<span class="type">double</span> y2)</span>.<span class="comment">/*将坐标(x1，y1),(x2,y2)的两个点连起来*/</span></span><br><span class="line">&#123;</span><br><span class="line">    nowpoint now;</span><br><span class="line">    now.x=GetCurrentX();</span><br><span class="line">    now.y=GetCurrentY();</span><br><span class="line">    MovePen(x1,y1);</span><br><span class="line">    DrawLine(x2-x1,y2-y1);</span><br><span class="line">    MovePen(now.x,now.y);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">move</span><span class="params">(<span class="type">double</span> distance)</span><span class="comment">/*向画笔当前方移动一段距离但不划线*/</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">double</span> x,y;</span><br><span class="line">	x=GetCurrentX()+distance*<span class="built_in">cos</span>(anglenatnow/<span class="number">180.0</span>*PI) ;</span><br><span class="line">	y=GetCurrentY()+distance*<span class="built_in">sin</span>(anglenatnow/<span class="number">180.0</span>*PI) ;</span><br><span class="line">	MovePen(x,y);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="最后绘图"><a class="markdownIt-Anchor" href="#最后绘图"></a> 最后绘图</h2>
 <p>图没什么好讲的，就是用之前做的系统做个绘制单元，然后一个旋转循环就能出来。<br>
 代码如下：</p>
-<pre class="language-c" data-language="c"><code class="language-c">void Hexagon()&#x2F;*完成一个六边形单元之后旋转18次并绘图即可*&#x2F;
-&#123;
-	int i;
-	turn(90.0);
-	for(i&#x3D;0;i&lt;6;i++)
-	&#123;
-	forward(1.0);
-	turn(-60.0);
-	&#125;
-	turn(-60.0);
-	forward(1.0);
-	turn(60.0);
-	forward(1.0);
-	move(-1.0);
-	turn(-120.0);
-	forward(1.0);
-	turn(30.0);
-	MovePen(GetWindowWidth()&#x2F;2,GetWindowHeight()&#x2F;2);
-	return;
-&#125;</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Hexagon</span><span class="params">()</span><span class="comment">/*完成一个六边形单元之后旋转18次并绘图即可*/</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	turn(<span class="number">90.0</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">6</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">	forward(<span class="number">1.0</span>);</span><br><span class="line">	turn(<span class="number">-60.0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	turn(<span class="number">-60.0</span>);</span><br><span class="line">	forward(<span class="number">1.0</span>);</span><br><span class="line">	turn(<span class="number">60.0</span>);</span><br><span class="line">	forward(<span class="number">1.0</span>);</span><br><span class="line">	move(<span class="number">-1.0</span>);</span><br><span class="line">	turn(<span class="number">-120.0</span>);</span><br><span class="line">	forward(<span class="number">1.0</span>);</span><br><span class="line">	turn(<span class="number">30.0</span>);</span><br><span class="line">	MovePen(GetWindowWidth()/<span class="number">2</span>,GetWindowHeight()/<span class="number">2</span>);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="实现效果"><a class="markdownIt-Anchor" href="#实现效果"></a> 实现效果</h2>
 <p>(左边是我自己画的当时还没设置笔颜色)<br>
 <img src="https://cdn.jsdelivr.net/gh/loyunemo/myimage/result1.png" alt="画图结果1"></p>
@@ -319,71 +267,7 @@ B(t)=\sum\limits_{i=0} \limits^{n} \begin{pmatrix}
 示例的拖拽程序中，只有一个控制点和一条原点出发到达拖拽点的直线，为了实现效果，自己要对其进行改动，将控制点由单个变量改为数组，用来实现多个控制点的效果。<br>
 这里自己删除了老师给的InitScene()这个初始化函数（没必要），对SetBox()、SetSizeBox()、StartDragging()添加了调用的形参，对InBox()、EndDragging()、RenderBox()、OnPaint()进行了逻辑的改动，让整个绘制控制系统支持多个控制点的绘制和控制。<br>
 老师给的代码：</p>
-<pre class="language-c" data-language="c"><code class="language-c">
-struct BoxT&#123;
-	double cx;
-	double cy;
-	double size;
-	char dragging;
-&#125; g_box;
-struct PointT&#123;
-	double x;
-	double y;
-&#125;g_dragstart;
-static void InitScene()&#123;
-	g_box.cx &#x3D; 0;
-	g_box.cy &#x3D; 0;
-	g_box.size &#x3D; 0.2;
-	g_box.dragging &#x3D; 0;
-&#125;
-static void SetBox(double cx, double cy)&#123;
-	g_box.cx &#x3D; cx;
-	g_box.cy &#x3D; cy;
-&#125;
-static void SetSizeBox(double cx, double cy, double size)&#123;
-	g_box.cx &#x3D; cx; 
-	g_box.cy &#x3D; cy;
-	g_box.size &#x3D; size; 
-&#125; 
-static int InBox(double x, double y)&#123;	
-	return x &gt;&#x3D; g_box.cx &amp;&amp; x &lt;&#x3D; g_box.cx + g_box.size &amp;&amp; y &gt;&#x3D; g_box.cy &amp;&amp; y &lt;&#x3D; g_box.cy + g_box.size;
-&#125;
-static void StartDragging(double x, double y)&#123;
-	g_box.dragging &#x3D; 1;
-	g_dragstart.x &#x3D; g_box.cx - x;
-	g_dragstart.y &#x3D; g_box.cy - y;
-&#125;
-static void EndDragging()&#123;	
-	g_box.dragging &#x3D; 0;
-&#125;
-static void RenderBox(struct BoxT* box)&#123;
-	SetPenColor(box-&gt;dragging?&quot;Red&quot;:&quot;Black&quot;); 	
-    SetPenSize(box-&gt;dragging?2:1);
-	DrawBox(box-&gt;cx, box-&gt;cy, box-&gt;size, box-&gt;size);	
-&#125;&#x2F;*拖拽控制点时的控制变化*&#x2F;
-static void OnPaint()&#123;
-	ClearWindow();		    
-    RenderBox(&amp;g_box);        
-    MovePen(0, 0);
-	DrawLineTo(g_box.cx, g_box.cy);
-&#125;&#x2F;*刷新绘制界面*&#x2F;
-static void OnMouse (int x, int y, int button, int event)&#123;	
-	double sx, sy;
-	sx &#x3D; WindowX(x);
-	sy &#x3D; WindowY(y);
-	if(button &#x3D;&#x3D; LEFT_BUTTON &amp;&amp; event &#x3D;&#x3D; BUTTON_DOWN)&#123;				
-		if(InBox(sx, sy))&#123;
-			StartDragging(sx, sy);
-			RefreshWindow();
-		&#125;
-	&#125; else if (button &#x3D;&#x3D; LEFT_BUTTON &amp;&amp; event &#x3D;&#x3D; BUTTON_UP)&#123;
-		EndDragging();
-		RefreshWindow();
-	&#125; else if (g_box.dragging &amp;&amp; event &#x3D;&#x3D; MOUSEMOVE)&#123;				
-		SetBox(sx + g_dragstart.x, sy + g_dragstart.y);
-		RefreshWindow();			
-	&#125;
-&#125;&#x2F;*鼠标响应事件判断*&#x2F;</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">BoxT</span>&#123;</span></span><br><span class="line">	<span class="type">double</span> cx;</span><br><span class="line">	<span class="type">double</span> cy;</span><br><span class="line">	<span class="type">double</span> size;</span><br><span class="line">	<span class="type">char</span> dragging;</span><br><span class="line">&#125; g_box;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PointT</span>&#123;</span></span><br><span class="line">	<span class="type">double</span> x;</span><br><span class="line">	<span class="type">double</span> y;</span><br><span class="line">&#125;g_dragstart;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">InitScene</span><span class="params">()</span>&#123;</span><br><span class="line">	g_box.cx = <span class="number">0</span>;</span><br><span class="line">	g_box.cy = <span class="number">0</span>;</span><br><span class="line">	g_box.size = <span class="number">0.2</span>;</span><br><span class="line">	g_box.dragging = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">SetBox</span><span class="params">(<span class="type">double</span> cx, <span class="type">double</span> cy)</span>&#123;</span><br><span class="line">	g_box.cx = cx;</span><br><span class="line">	g_box.cy = cy;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">SetSizeBox</span><span class="params">(<span class="type">double</span> cx, <span class="type">double</span> cy, <span class="type">double</span> size)</span>&#123;</span><br><span class="line">	g_box.cx = cx; </span><br><span class="line">	g_box.cy = cy;</span><br><span class="line">	g_box.size = size; </span><br><span class="line">&#125; </span><br><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">InBox</span><span class="params">(<span class="type">double</span> x, <span class="type">double</span> y)</span>&#123;	</span><br><span class="line">	<span class="keyword">return</span> x &gt;= g_box.cx &amp;&amp; x &lt;= g_box.cx + g_box.size &amp;&amp; y &gt;= g_box.cy &amp;&amp; y &lt;= g_box.cy + g_box.size;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">StartDragging</span><span class="params">(<span class="type">double</span> x, <span class="type">double</span> y)</span>&#123;</span><br><span class="line">	g_box.dragging = <span class="number">1</span>;</span><br><span class="line">	g_dragstart.x = g_box.cx - x;</span><br><span class="line">	g_dragstart.y = g_box.cy - y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">EndDragging</span><span class="params">()</span>&#123;	</span><br><span class="line">	g_box.dragging = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">RenderBox</span><span class="params">(<span class="keyword">struct</span> BoxT* box)</span>&#123;</span><br><span class="line">	SetPenColor(box-&gt;dragging?<span class="string">&quot;Red&quot;</span>:<span class="string">&quot;Black&quot;</span>); 	</span><br><span class="line">    SetPenSize(box-&gt;dragging?<span class="number">2</span>:<span class="number">1</span>);</span><br><span class="line">	DrawBox(box-&gt;cx, box-&gt;cy, box-&gt;size, box-&gt;size);	</span><br><span class="line">&#125;<span class="comment">/*拖拽控制点时的控制变化*/</span></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">OnPaint</span><span class="params">()</span>&#123;</span><br><span class="line">	ClearWindow();		    </span><br><span class="line">    RenderBox(&amp;g_box);        </span><br><span class="line">    MovePen(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">	DrawLineTo(g_box.cx, g_box.cy);</span><br><span class="line">&#125;<span class="comment">/*刷新绘制界面*/</span></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">OnMouse</span> <span class="params">(<span class="type">int</span> x, <span class="type">int</span> y, <span class="type">int</span> button, <span class="type">int</span> event)</span>&#123;	</span><br><span class="line">	<span class="type">double</span> sx, sy;</span><br><span class="line">	sx = WindowX(x);</span><br><span class="line">	sy = WindowY(y);</span><br><span class="line">	<span class="keyword">if</span>(button == LEFT_BUTTON &amp;&amp; event == BUTTON_DOWN)&#123;				</span><br><span class="line">		<span class="keyword">if</span>(InBox(sx, sy))&#123;</span><br><span class="line">			StartDragging(sx, sy);</span><br><span class="line">			RefreshWindow();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (button == LEFT_BUTTON &amp;&amp; event == BUTTON_UP)&#123;</span><br><span class="line">		EndDragging();</span><br><span class="line">		RefreshWindow();</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (g_box.dragging &amp;&amp; event == MOUSEMOVE)&#123;				</span><br><span class="line">		SetBox(sx + g_dragstart.x, sy + g_dragstart.y);</span><br><span class="line">		RefreshWindow();			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;<span class="comment">/*鼠标响应事件判断*/</span></span><br></pre></td></tr></table></figure>
 <p>改动的主要逻辑是：<br>
 1.让InBox()在不同的控制点内返回不同的值。<br>
 通过一个for循环，判断在第几个点内，便返回相应的数组下标值，告诉系统去更改相应的控制点的绘制情况。<br>
@@ -391,77 +275,7 @@ static void OnMouse (int x, int y, int button, int event)&#123;
 2.让SetBox()、SetSizeBox()、StartDragging()、OnMouse()这几个函数去根据返回值更新相应控制点的情况,设置控制点中心的坐标。<br>
 3.OnPaint()函数中，将刷新绘制直线改为绘制贝塞尔曲线。同时将原来单个的控制点判断改为一个循环，对所有的控制点点击情况进行判断。<br>
 4.为了看起来美观，自己挪移了贝塞尔曲线的位置并改动了相应的坐标,让它到中间的一个指定位置，然后绘制了相应的坐标系，并在控制台中打印了相应控制点的坐标。</p>
-<pre class="language-c" data-language="c"><code class="language-c">static void SetBox(double cx, double cy,int i)&#123;
-	g_box[i].cx &#x3D; cx;
-	g_box[i].cy &#x3D; cy;
-&#125;&#x2F;*设置点的坐标*&#x2F; 
-
-static void SetSizeBox(double cx, double cy, double size,int i)&#123;
-	g_box[i].cx &#x3D; cx; j
-	g_box[i].cy &#x3D; cy;
-	g_box[i].size &#x3D; size; 
-&#125; &#x2F;*设置控制点的大小*&#x2F; 
-
-static int InBox(double x, double y)&#123;	
-	int i;
-	for(i&#x3D;0;i&lt;numberofpoint;i++)
-	&#123;if(x &gt;&#x3D; g_box[i].cx-g_box[i].size&#x2F;2 &amp;&amp; x &lt;&#x3D; g_box[i].cx + g_box[i].size&#x2F;2 &amp;&amp; y &gt;&#x3D; g_box[i].cy-g_box[i].size&#x2F;2&amp;&amp; y &lt;&#x3D; g_box[i].cy + g_box[i].size&#x2F;2)
-	return i;
-	&#125;
-	if(i&#x3D;&#x3D;numberofpoint)
-	return -1;
-	
-&#125;&#x2F;*在哪个点内的判断*&#x2F; 
-
-static void StartDragging(double x, double y,int i)&#123;
-	g_box[i].dragging &#x3D; 1;
-	g_dragstart.x &#x3D; g_box[i].cx - x;
-	g_dragstart.y &#x3D; g_box[i].cy - y;
-&#125;&#x2F;*开始拖拽方块*&#x2F; 
-
-static void EndDragging()&#123;	
-	int i;
-	for(i&#x3D;0;i&lt;numberofpoint;i++)
-	g_box[i].dragging &#x3D; 0;
-&#125;&#x2F;*停止拖拽*&#x2F; 
-
-static void RenderBox(BoxT* box)&#123;
-	SetPenColor(box-&gt;dragging?&quot;Red&quot;:&quot;Black&quot;); 	
-    SetPenSize(box-&gt;dragging?2:1);
-	DrawBox(box-&gt;cx, box-&gt;cy, box-&gt;size, box-&gt;size);	
-&#125; &#x2F;*点击时候的正方形状态切换*&#x2F; 
-
-static void OnPaint()&#123;
-	ClearWindow();
-	int i;
-    for(i&#x3D;0;i&lt;numberofpoint;i++)
-	RenderBox(&amp;g_box[i]);
-	SetPenColor(&quot;Black&quot;);
-	SetPenSize(1);
-	asis();
-	MovePen(g_box[0].cx,g_box[0].cy);        
-    createbezier(g_box,numberofpoint);
-&#125; &#x2F;*刷新作图绘制*&#x2F; 
-static void OnMouse (int x, int y, int button, int event)&#123;	
-	double sx, sy;
-	sx &#x3D; WindowX(x);
-	sy &#x3D; WindowY(y);
-	int i;
-	
-	if(button &#x3D;&#x3D; LEFT_BUTTON &amp;&amp; event &#x3D;&#x3D; BUTTON_DOWN)&#123;				
-		if(InBox(sx, sy)&gt;&#x3D;0)&#123;
-			StartDragging(sx, sy,InBox(sx, sy));
-			RefreshWindow();
-		&#125;
-	&#125; else if (button &#x3D;&#x3D; LEFT_BUTTON &amp;&amp; event &#x3D;&#x3D; BUTTON_UP)&#123;
-		EndDragging(InBox(sx, sy));
-		RefreshWindow();
-	&#125; else if (g_box[InBox(sx, sy)].dragging &amp;&amp; event &#x3D;&#x3D; MOUSEMOVE)&#123;				
-		&#x2F;&#x2F;ClearRect(g_box.cx, g_box.cy, g_box.size);
-		SetBox(sx + g_dragstart.x, sy + g_dragstart.y,InBox(sx, sy));
-		RefreshWindow();			
-	&#125;
-&#125; &#x2F;*鼠标事件的响应与判断*&#x2F; </code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">SetBox</span><span class="params">(<span class="type">double</span> cx, <span class="type">double</span> cy,<span class="type">int</span> i)</span>&#123;</span><br><span class="line">	g_box[i].cx = cx;</span><br><span class="line">	g_box[i].cy = cy;</span><br><span class="line">&#125;<span class="comment">/*设置点的坐标*/</span> </span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">SetSizeBox</span><span class="params">(<span class="type">double</span> cx, <span class="type">double</span> cy, <span class="type">double</span> size,<span class="type">int</span> i)</span>&#123;</span><br><span class="line">	g_box[i].cx = cx; j</span><br><span class="line">	g_box[i].cy = cy;</span><br><span class="line">	g_box[i].size = size; </span><br><span class="line">&#125; <span class="comment">/*设置控制点的大小*/</span> </span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">InBox</span><span class="params">(<span class="type">double</span> x, <span class="type">double</span> y)</span>&#123;	</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;numberofpoint;i++)</span><br><span class="line">	&#123;<span class="keyword">if</span>(x &gt;= g_box[i].cx-g_box[i].size/<span class="number">2</span> &amp;&amp; x &lt;= g_box[i].cx + g_box[i].size/<span class="number">2</span> &amp;&amp; y &gt;= g_box[i].cy-g_box[i].size/<span class="number">2</span>&amp;&amp; y &lt;= g_box[i].cy + g_box[i].size/<span class="number">2</span>)</span><br><span class="line">	<span class="keyword">return</span> i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(i==numberofpoint)</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	</span><br><span class="line">&#125;<span class="comment">/*在哪个点内的判断*/</span> </span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">StartDragging</span><span class="params">(<span class="type">double</span> x, <span class="type">double</span> y,<span class="type">int</span> i)</span>&#123;</span><br><span class="line">	g_box[i].dragging = <span class="number">1</span>;</span><br><span class="line">	g_dragstart.x = g_box[i].cx - x;</span><br><span class="line">	g_dragstart.y = g_box[i].cy - y;</span><br><span class="line">&#125;<span class="comment">/*开始拖拽方块*/</span> </span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">EndDragging</span><span class="params">()</span>&#123;	</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;numberofpoint;i++)</span><br><span class="line">	g_box[i].dragging = <span class="number">0</span>;</span><br><span class="line">&#125;<span class="comment">/*停止拖拽*/</span> </span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">RenderBox</span><span class="params">(BoxT* box)</span>&#123;</span><br><span class="line">	SetPenColor(box-&gt;dragging?<span class="string">&quot;Red&quot;</span>:<span class="string">&quot;Black&quot;</span>); 	</span><br><span class="line">    SetPenSize(box-&gt;dragging?<span class="number">2</span>:<span class="number">1</span>);</span><br><span class="line">	DrawBox(box-&gt;cx, box-&gt;cy, box-&gt;size, box-&gt;size);	</span><br><span class="line">&#125; <span class="comment">/*点击时候的正方形状态切换*/</span> </span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">OnPaint</span><span class="params">()</span>&#123;</span><br><span class="line">	ClearWindow();</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;numberofpoint;i++)</span><br><span class="line">	RenderBox(&amp;g_box[i]);</span><br><span class="line">	SetPenColor(<span class="string">&quot;Black&quot;</span>);</span><br><span class="line">	SetPenSize(<span class="number">1</span>);</span><br><span class="line">	asis();</span><br><span class="line">	MovePen(g_box[<span class="number">0</span>].cx,g_box[<span class="number">0</span>].cy);        </span><br><span class="line">    createbezier(g_box,numberofpoint);</span><br><span class="line">&#125; <span class="comment">/*刷新作图绘制*/</span> </span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">OnMouse</span> <span class="params">(<span class="type">int</span> x, <span class="type">int</span> y, <span class="type">int</span> button, <span class="type">int</span> event)</span>&#123;	</span><br><span class="line">	<span class="type">double</span> sx, sy;</span><br><span class="line">	sx = WindowX(x);</span><br><span class="line">	sy = WindowY(y);</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(button == LEFT_BUTTON &amp;&amp; event == BUTTON_DOWN)&#123;				</span><br><span class="line">		<span class="keyword">if</span>(InBox(sx, sy)&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">			StartDragging(sx, sy,InBox(sx, sy));</span><br><span class="line">			RefreshWindow();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (button == LEFT_BUTTON &amp;&amp; event == BUTTON_UP)&#123;</span><br><span class="line">		EndDragging(InBox(sx, sy));</span><br><span class="line">		RefreshWindow();</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (g_box[InBox(sx, sy)].dragging &amp;&amp; event == MOUSEMOVE)&#123;				</span><br><span class="line">		<span class="comment">//ClearRect(g_box.cx, g_box.cy, g_box.size);</span></span><br><span class="line">		SetBox(sx + g_dragstart.x, sy + g_dragstart.y,InBox(sx, sy));</span><br><span class="line">		RefreshWindow();			</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="comment">/*鼠标事件的响应与判断*/</span> </span><br></pre></td></tr></table></figure>
 <h1 id="界面优化及其他相关"><a class="markdownIt-Anchor" href="#界面优化及其他相关"></a> 界面优化及其他相关</h1>
 <hr>
 <p>回到主程序，通过初始化相关的设定完成界面设定，然后通过<br>
