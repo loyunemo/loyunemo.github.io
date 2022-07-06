@@ -25,7 +25,119 @@
 @font-face {
  font-family: 'JetBrains Mono';
  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
-}</style><meta name="generator" content="Hexo 6.2.0"></head><body style="background-image:url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);"><div id="cursor-container"><div id="cursor-outer"></div><div id="cursor-effect"></div></div><main><header><nav><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><ol class="navContent"><li class="navItem search-header"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></li><li class="navItem"><a href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem"><a href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav><div class="search-popup"><div id="search-result"></div></div></header><article><div id="post-bg"><div id="post-title"><h1>CUDA</h1><div id="post-info"><span>First Post:<span class="control"><time datetime="2022-07-03T01:15:48.000Z" id="date"> 2022-07-03</time></span></span><br><span>Last Update:<span class="control"><time datetime="2022-07-04T10:27:02.339Z" id="updated"> 2022-07-04</time></span></span><br><span>Word Count:<span class="control">&nbsp;8.2k</span></span><br><span>Read Time:<span class="control">&nbsp;31min</span></span></div></div><hr><div id="post-content"><p>cuda的一些内容<br>简单来讲，整节课就是围绕如何解放GPU算力展开的，通常的C一般去调用的都是CPU函数<br>CUDA给我的理解是如何通过CUDA的编程管理，让各个GPU存在的计算力能够被解放出来，最大化利用计算机算力。</p>
+}</style><meta name="generator" content="Hexo 6.2.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body style="background-image:url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);"><div id="cursor-container"><div id="cursor-outer"></div><div id="cursor-effect"></div></div><main><header><nav><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><ol class="navContent"><li class="navItem search-header"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></li><li class="navItem"><a href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem"><a href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav><div class="search-popup"><div id="search-result"></div></div></header><article><div id="post-bg"><div id="post-title"><h1>CUDA</h1><div id="post-info"><span>First Post:<span class="control"><time datetime="2022-07-03T01:15:48.000Z" id="date"> 2022-07-03</time></span></span><br><span>Last Update:<span class="control"><time datetime="2022-07-04T10:27:02.339Z" id="updated"> 2022-07-04</time></span></span><br><span>Word Count:<span class="control">&nbsp;8.2k</span></span><br><span>Read Time:<span class="control">&nbsp;31min</span></span></div></div><hr><div id="post-content"><p>cuda的一些内容<br>简单来讲，整节课就是围绕如何解放GPU算力展开的，通常的C一般去调用的都是CPU函数<br>CUDA给我的理解是如何通过CUDA的编程管理，让各个GPU存在的计算力能够被解放出来，最大化利用计算机算力。</p>
 <p>通常，我们将在 CPU 上执行的代码称为主机代码，而将在 GPU 上运行的代码称为设备代码。<br>0.架构：CPU-&gt;GPU-&gt;CPU(执行程序)<br>1.核函数:在GPU上执行<br>格式：<br><pre class="line-numbers language-none"><code class="language-none">__global__ void function()  &#x2F;&#x2F;声明&#x2F;&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></p>
 <p>使用的时候需要指定 <strong>线程块</strong> 和每块 <strong>线程块的线程个数</strong> 。<br>使用格式：<br><pre class="line-numbers language-none"><code class="language-none">GPUFunction&lt;&lt;&lt;block, thread&gt;&gt;&gt;();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><br>在最后使用的时候需要使用函数<br><pre class="line-numbers language-none"><code class="language-none">cudaDeviceSynchronize();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><br>原因：<br>与许多 C/C++ 代码不同，核函数启动方式为 <strong>异步</strong> ：CPU 代码将继续执行而无需等待核函数完成启动。<br>调用 CUDA 运行时提供的函数 <code>cudaDeviceSynchronize()</code>将导致主机 (CPU) 代码暂作等待，直至设备 (GPU) 代码执行完成，才能在 CPU 上恢复执行。<br>CUDA 核函数可以访问能够识别如下两种索引的特殊变量：正在执行核函数的线程（位于线程块内）索引和线程所在的线程块（位于网格内）索引。这两种变量分别为 <code>threadIdx.x</code> 和 <code>blockIdx.x</code>。<br>CUDA 核函数可以访问给出块中线程数的特殊变量：<code>blockDim.x</code>。通过将此变量与 <code>blockIdx.x</code> 和 <code>threadIdx.x</code> 变量结合使用，并借助惯用表达式<br><pre class="line-numbers language-none"><code class="language-none">threadIdx.x + blockIdx.x * blockDim.x<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><br><pre class="line-numbers language-none"><code class="language-none">如要分配和释放内存，并获取可在主机和设备代码中引用的指针，请使用 cudaMallocManaged 和 cudaFree 取代对 malloc 和 free 的调用，如下例所示：
 线程-&gt;线程块-&gt;网格
