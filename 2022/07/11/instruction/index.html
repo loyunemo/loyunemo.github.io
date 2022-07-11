@@ -15,15 +15,15 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="123456graph TBid1(圆角矩形)--普通线--&gt;id2[矩形]id2&#x3D;&#x3D;粗线&#x3D;&#x3D;&gt;id3&amp;#123;菱形&amp;#125;id3-. 虚线.-&gt;id4&gt; 右向旗帜]id3--无箭头--- id5((圆形))">
+  <meta name="description" content="graph TB; id1(圆角矩形)--普通线--&gt;id2[矩形]; id2&#x3D;&#x3D;粗线&#x3D;&#x3D;&gt;id3{菱形}; id3-. 虚线.-&gt;id4&gt; 右向旗帜]; id3--无箭头--- id5((圆形));">
 <meta property="og:type" content="article">
 <meta property="og:title" content="instruction">
 <meta property="og:url" content="https://loyunemo.github.io/2022/07/11/instruction/index.html">
 <meta property="og:site_name" content="loyunemo的摆烂空间">
-<meta property="og:description" content="123456graph TBid1(圆角矩形)--普通线--&gt;id2[矩形]id2&#x3D;&#x3D;粗线&#x3D;&#x3D;&gt;id3&amp;#123;菱形&amp;#125;id3-. 虚线.-&gt;id4&gt; 右向旗帜]id3--无箭头--- id5((圆形))">
+<meta property="og:description" content="graph TB; id1(圆角矩形)--普通线--&gt;id2[矩形]; id2&#x3D;&#x3D;粗线&#x3D;&#x3D;&gt;id3{菱形}; id3-. 虚线.-&gt;id4&gt; 右向旗帜]; id3--无箭头--- id5((圆形));">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-07-11T07:14:03.000Z">
-<meta property="article:modified_time" content="2022-07-11T07:14:23.606Z">
+<meta property="article:modified_time" content="2022-07-11T07:37:36.985Z">
 <meta property="article:author" content="loyunemo">
 <meta name="twitter:card" content="summary">
   
@@ -175,7 +175,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        119
+                        100
                     
                     字
                 </li>
@@ -191,11 +191,15 @@
         <div class="kratos-post-content">
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1657523663606"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1657525056985"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
             <hr />
-            <div itemprop="articleBody"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line"></span><br><span class="line">id1(圆角矩形)--普通线--&gt;id2[矩形]</span><br><span class="line">id2==粗线==&gt;id3&#123;菱形&#125;</span><br><span class="line">id3-. 虚线.-&gt;id4&gt; 右向旗帜]</span><br><span class="line">id3--无箭头--- id5((圆形))</span><br></pre></td></tr></table></figure></div>
+            <div itemprop="articleBody"><pre class="mermaid">graph TB;
+id1(圆角矩形)--普通线-->id2[矩形];
+id2==粗线==>id3{菱形};
+id3-. 虚线.->id4> 右向旗帜];
+id3--无箭头--- id5((圆形));</pre></div>
         </div>
         
             <div class="kratos-copyright text-center clearfix">
@@ -262,7 +266,11 @@
             const twitterBase   = "https://twitter.com/intent/tweet?";
             const hostUrl       = "https://loyunemo.github.io/2022/07/11/instruction/";
             const title         = "「instruction」";
-            const excerpt       = `123456graph TBid1(圆角矩形)--普通线--&gt;id2[矩形]id2==粗线==&gt;id3&#123;菱形&#125;id3-. 虚线.-&gt;id4&gt; 右向旗帜]id3--无箭头--- id5((圆形))`;
+            const excerpt       = `graph TB;
+id1(圆角矩形)--普通线-->id2[矩形];
+id2==粗线==>id3{菱形};
+id3-. 虚线.->id4> 右向旗帜];
+id3--无箭头--- id5((圆形));`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -284,7 +292,7 @@
                     
                 </div>
                 <div class="pull-date">
-                    <time datetime="2022-07-11T07:14:23.606Z" itemprop="dateModified">最后编辑：2022-07-11</time>
+                    <time datetime="2022-07-11T07:37:36.985Z" itemprop="dateModified">最后编辑：2022-07-11</time>
                 </div>
             </div>
         </footer>
