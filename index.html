@@ -304,7 +304,12 @@ Numpy100题
                         <p itemProp="description">
                             
                                 计算机层次结构：
-123456789graph LR    id1(数字逻辑)--&gt;id2(控制)    id2(控制)--&gt;id3(机器)    id3(机器)--&gt;id4(系统软件)    id4--&gt;id...
+graph LR;
+    id1(数字逻辑)-->id2(控制);
+    id2(控制)-->id3(机器);
+    id3(机器)-->id4(系统软件);
+    id4-->id5;
+    id5(汇编...
                             
                         </p>
                     </div>
@@ -880,6 +885,22 @@ CUDA给我的理解是如何通过CUDA的编程管理，让各个GPU存在的计
 
 
 <!-- Extra support for third-party plguins  -->
+
+    <script>
+    // Initialize
+    const init = () => {
+        mermaid.initialize({theme: 'forest'});
+    };
+    const reload = () => {
+        mermaid.init(undefined, ".mermaid");
+    };
+    if (typeof mermaid == 'undefined') {
+        const src = 'https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js';
+        $.getScript(src, init);
+    }
+    // Set PJAX callback function
+    window.addEventListener('pjax:complete', reload);
+</script>
 
 
     </body>
