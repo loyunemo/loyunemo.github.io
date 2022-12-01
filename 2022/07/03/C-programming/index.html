@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="zh-CN">
+    <head>
+  <!-- 元数据 -->
   <meta charset="utf-8">
   
   
   <title>C-programming | LoyuNemo的魔域空间</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="LoyuNemo" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="C-programming" />
+  
   <meta name="description" content="专题2-图形交互编程-一些基本的吐槽&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C-programming">
@@ -22,88 +32,174 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/loyunemo/myimage/create-project.png">
   
-    <link rel="alternate" href="/loyunemo.github.io/atom.xml" title="LoyuNemo的魔域空间" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/loyunemo.github.io/favicon.png">
-  
+  <!-- 站点验证相关 -->
   
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/loyunemo.github.io/css/style.css">
-
-  
     
-<link rel="stylesheet" href="/loyunemo.github.io/fancybox/jquery.fancybox.min.css">
-
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/loyunemo.github.io/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/loyunemo.github.io/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/loyunemo.github.io/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/loyunemo.github.io/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="/loyunemo.github.io/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/loyunemo.github.io/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+    <link rel="stylesheet" href="/loyunemo.github.io/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
+  
+  
+    <link rel="stylesheet" href="/loyunemo.github.io/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/loyunemo.github.io/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="/loyunemo.github.io/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('/images/banner.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/bg.webp');
+        }
+      }
+    
+  </style>
   
 <meta name="generator" content="Hexo 6.3.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/loyunemo.github.io/" id="logo">LoyuNemo的魔域空间</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/loyunemo.github.io/">Home</a>
-        
-          <a class="main-nav-link" href="/loyunemo.github.io/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/loyunemo.github.io/atom.xml" title="RSS 订阅"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://loyunemo.github.io/loyunemo.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
 
-      <div class="outer">
-        <section id="main"><article id="post-C-programming" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/loyunemo.github.io/2022/07/03/C-programming/" class="article-date">
-  <time class="dt-published" datetime="2022-07-03T01:01:51.000Z" itemprop="datePublished">2022-07-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/loyunemo.github.io/categories/C-programming/">C-programming</a>
-  </div>
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                    
+                                        
+                                            <li><a href="/loyunemo.github.io/"><i class="fa fa-home"></i>首页</a></li>
+                                        
+                                    
+                                        
+                                            <li><a href="/loyunemo.github.io/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                        
+                                    
+                                        
+                                            <li><a href="/loyunemo.github.io/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                        
+                                    
+                                        
+                                            <li>
+                                                <a><i class="fa fa-link"></i>链接</a>
+                                                <ul class="sub-menu">
+                                                    
+                                                        
+                                                    
+                                                </ul>
+                                            </li>
+                                        
+                                    
+                                        
+                                            <li><a href="https://loyunemo.github.io"></a></li>
+                                        
+                                    
+                                        
+                                            <li><a target="_blank" rel="noopener" href="https://github.com/loyunemo/loyunemo.github.io"></a></li>
+                                        
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/loyunemo.github.io/">LoyuNemo的魔域空间</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/loyunemo.github.io/">
+                        <h2>LoyuNemo的魔域空间</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
         
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      C-programming
-    </h1>
-  
 
-      </header>
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
     
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="专题2-图形交互编程-一些基本的吐槽"><a href="#专题2-图形交互编程-一些基本的吐槽" class="headerlink" title="专题2-图形交互编程-一些基本的吐槽"></a>专题2-图形交互编程-一些基本的吐槽</h1><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>不得不说图形库编程这就是个纯粹的机械操作，看懂完代码和一些基本的运行架构就能直接上手，说到底就不过是换了个东西帮你画图，其实没啥技术含量，<del>一个美观的UI界面和花里胡哨的功能才是重点</del>（<strong>BUSHI</strong>)</p>
+    <link itemprop="mainEntityOfPage" href="https://loyunemo.github.io/loyunemo.github.io/2022/07/03/C-programming/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">C-programming</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2022-07-03T01:01:51.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-07-03</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">LoyuNemo</span>
+                </li>
+                <li>
+                    <i class="fa fa-edit"></i> 
+                    
+                    
+                        ~8.64K
+                    
+                    字
+                </li>
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1657128134006"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+            <hr />
+            <div itemprop="articleBody"><h1 id="专题2-图形交互编程-一些基本的吐槽"><a href="#专题2-图形交互编程-一些基本的吐槽" class="headerlink" title="专题2-图形交互编程-一些基本的吐槽"></a>专题2-图形交互编程-一些基本的吐槽</h1><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>不得不说图形库编程这就是个纯粹的机械操作，看懂完代码和一些基本的运行架构就能直接上手，说到底就不过是换了个东西帮你画图，其实没啥技术含量，<del>一个美观的UI界面和花里胡哨的功能才是重点</del>（<strong>BUSHI</strong>)</p>
 <p>其次，老师发的示例基本上拥有了所有需要的东西，所以只要看懂代码在这个基础上<del>魔改</del>就能实现自己想要的效果（不是）。<br>不管怎么说，在这个内卷成风的课程班级，<em><strong>（更多的是自己没听）</strong></em>图形的交互编程这一关对自己来讲属实折磨。<br>算了，言归正传。</p>
 <h1 id="第一步：环境配置"><a href="#第一步：环境配置" class="headerlink" title="第一步：环境配置"></a>第一步：环境配置</h1><hr>
 <h2 id="这里采用了最古早版本的graphics图形库进行绘制操作。由于个人嫌visual-studio配置起来太麻烦了，这里还是选择偷了个懒，直接用老师给的DEV-C-进行处理（毕竟现成的样例程序实在是太香了）。如果是自己配置的话，选择文件-新建-项目，按如下配置来创建-（净是废话）之后在显示项目名称下面（左边的项目管理）创建include和libgraphics两个文件夹分别用来存放C-HEADER文件和C-源文件，以及一个main-c的主程序。将老师给的的main-c程序内容完全复制一遍，替换系统给的内容（没错就是这么粗暴，跟复制没啥区别），并将库内容按照存放方式分别添加到include和libgraphics文件夹之中。（右键文件夹-添加，选择相应的文件加入）主要在配置的时候需要注意：要到项目-项目属性这里去设置一下文件-x2F-目录，将include添加到包含文件目录中。由于这里采用的库头文件还是比较多的，所以自己习惯性地写一个global-h文件来包含所有的头文件，然后main和自己新创建的计算曲线函数文件、画图功能文件就直接-include-quot-global-h-quot-就完事了，不用一个一个添加，不过要把相应的头文件加到global-h里面去。-第二步，画图基本函数：void-MovePen-double-x-double-y-移动画笔坐标但不进行绘制，移动至指定的-x-y-点，是绝对位置；void-DrawLine-double-dx-double-dy-：在当前画笔位置上绘制并移动画笔，相对移动的x、y坐标分别为：dx、dy-第三步，实现project1"><a href="#这里采用了最古早版本的graphics图形库进行绘制操作。由于个人嫌visual-studio配置起来太麻烦了，这里还是选择偷了个懒，直接用老师给的DEV-C-进行处理（毕竟现成的样例程序实在是太香了）。如果是自己配置的话，选择文件-新建-项目，按如下配置来创建-（净是废话）之后在显示项目名称下面（左边的项目管理）创建include和libgraphics两个文件夹分别用来存放C-HEADER文件和C-源文件，以及一个main-c的主程序。将老师给的的main-c程序内容完全复制一遍，替换系统给的内容（没错就是这么粗暴，跟复制没啥区别），并将库内容按照存放方式分别添加到include和libgraphics文件夹之中。（右键文件夹-添加，选择相应的文件加入）主要在配置的时候需要注意：要到项目-项目属性这里去设置一下文件-x2F-目录，将include添加到包含文件目录中。由于这里采用的库头文件还是比较多的，所以自己习惯性地写一个global-h文件来包含所有的头文件，然后main和自己新创建的计算曲线函数文件、画图功能文件就直接-include-quot-global-h-quot-就完事了，不用一个一个添加，不过要把相应的头文件加到global-h里面去。-第二步，画图基本函数：void-MovePen-double-x-double-y-移动画笔坐标但不进行绘制，移动至指定的-x-y-点，是绝对位置；void-DrawLine-double-dx-double-dy-：在当前画笔位置上绘制并移动画笔，相对移动的x、y坐标分别为：dx、dy-第三步，实现project1" class="headerlink" title="这里采用了最古早版本的graphics图形库进行绘制操作。由于个人嫌visual studio配置起来太麻烦了，这里还是选择偷了个懒，直接用老师给的DEV-C++进行处理（毕竟现成的样例程序实在是太香了）。如果是自己配置的话，选择文件-新建-项目，按如下配置来创建:（净是废话）之后在显示项目名称下面（左边的项目管理）创建include和libgraphics两个文件夹分别用来存放C HEADER文件和C 源文件，以及一个main.c的主程序。将老师给的的main.c程序内容完全复制一遍，替换系统给的内容（没错就是这么粗暴，跟复制没啥区别），并将库内容按照存放方式分别添加到include和libgraphics文件夹之中。（右键文件夹-添加，选择相应的文件加入）主要在配置的时候需要注意：要到项目-项目属性这里去设置一下文件&#x2F;目录，将include添加到包含文件目录中。由于这里采用的库头文件还是比较多的，所以自己习惯性地写一个global.h文件来包含所有的头文件，然后main和自己新创建的计算曲线函数文件、画图功能文件就直接 #include&quot;global.h&quot;就完事了，不用一个一个添加，不过要把相应的头文件加到global.h里面去。# 第二步，画图基本函数：void MovePen(double x, double y):移动画笔坐标但不进行绘制，移动至指定的(x,y)点，是绝对位置；void DrawLine(double dx, double dy)：在当前画笔位置上绘制并移动画笔，相对移动的x、y坐标分别为：dx、dy# 第三步，实现project1"></a>这里采用了最古早版本的graphics图形库进行绘制操作。<br>由于个人嫌<code>visual studio</code>配置起来太麻烦了，这里还是选择偷了个懒，直接用老师给的DEV-C++进行处理（毕竟现成的样例程序实在是太香了）。<br>如果是自己配置的话，选择<code>文件-新建-项目</code>，按如下配置来创建:（<del>净是废话</del>）<br><img src="https://cdn.jsdelivr.net/gh/loyunemo/myimage/create-project.png" alt="创建项目"><br>之后在显示项目名称下面（左边的项目管理）创建include和libgraphics两个文件夹分别用来存放C HEADER文件和C 源文件，以及一个main.c的主程序。将老师给的的main.c程序内容完全复制一遍，替换系统给的内容（没错就是这么粗暴，跟复制没啥区别），并将库内容按照存放方式分别添加到include和libgraphics文件夹之中。（右键文件夹-添加，选择相应的文件加入）<br>主要在配置的时候需要注意：<br>要到项目-项目属性这里去设置一下文件&#x2F;目录，将include添加到包含文件目录中。<br>由于这里采用的库头文件还是比较多的，所以自己习惯性地写一个global.h文件来包含所有的头文件，然后main和自己新创建的计算曲线函数文件、画图功能文件就直接 <code>#include&quot;global.h&quot;</code>就完事了，不用一个一个添加，不过要把相应的头文件加到global.h里面去。<br># 第二步，画图基本函数：<br>void MovePen(double x, double y):移动画笔坐标但不进行绘制，移动至指定的(x,y)点，是绝对位置；<br>void DrawLine(double dx, double dy)：在当前画笔位置上绘制并移动画笔，相对移动的x、y坐标分别为：dx、dy<br># 第三步，实现project1</h2><p>project1主要是设计一个绘制系统，画一个图。这个em其实简单到我都不好意思拿上去展示了（这分绝对很低啊）<br>主要的实现关键是要设置一个 extern double类型的数据，记录画笔目前朝向的角度，extern 主要是为了让多文件的情况下主函数能够访问角度数据，这样方便自己建立相应的.c文件和c header文件，将所有自己写的函数写在里面，方便以后要用时可以方便迁移调用。各个函数代码如下：</p>
@@ -120,158 +216,340 @@
 <h2 id="这里实现的主要操作就是对老师的代码进行魔改。老师定义了一个结构体BoxT，用来存储拖拽事件相应情况，控制点大小和坐标。示例的拖拽程序中，只有一个控制点和一条原点出发到达拖拽点的直线，为了实现效果，自己要对其进行改动，将控制点由单个变量改为数组，用来实现多个控制点的效果。这里自己删除了老师给的InitScene-这个初始化函数（没必要），对SetBox-、SetSizeBox-、StartDragging-添加了调用的形参，对InBox-、EndDragging-、RenderBox-、OnPaint-进行了逻辑的改动，让整个绘制控制系统支持多个控制点的绘制和控制。老师给的代码：改动的主要逻辑是：1-让InBox-在不同的控制点内返回不同的值。-通过一个for循环，判断在第几个点内，便返回相应的数组下标值，告诉系统去更改相应的控制点的绘制情况。-如果判断出来鼠标不在控制点内，即for循环的变量不满足循环条件跳出循环时，就返回-1。2-让SetBox-、SetSizeBox-、StartDragging-、OnMouse-这几个函数去根据返回值更新相应控制点的情况-设置控制点中心的坐标。3-OnPaint-函数中，将刷新绘制直线改为绘制贝塞尔曲线。同时将原来单个的控制点判断改为一个循环，对所有的控制点点击情况进行判断。4-为了看起来美观，自己挪移了贝塞尔曲线的位置并改动了相应的坐标-让它到中间的一个指定位置，然后绘制了相应的坐标系，并在控制台中打印了相应控制点的坐标。-界面优化及其他相关"><a href="#这里实现的主要操作就是对老师的代码进行魔改。老师定义了一个结构体BoxT，用来存储拖拽事件相应情况，控制点大小和坐标。示例的拖拽程序中，只有一个控制点和一条原点出发到达拖拽点的直线，为了实现效果，自己要对其进行改动，将控制点由单个变量改为数组，用来实现多个控制点的效果。这里自己删除了老师给的InitScene-这个初始化函数（没必要），对SetBox-、SetSizeBox-、StartDragging-添加了调用的形参，对InBox-、EndDragging-、RenderBox-、OnPaint-进行了逻辑的改动，让整个绘制控制系统支持多个控制点的绘制和控制。老师给的代码：改动的主要逻辑是：1-让InBox-在不同的控制点内返回不同的值。-通过一个for循环，判断在第几个点内，便返回相应的数组下标值，告诉系统去更改相应的控制点的绘制情况。-如果判断出来鼠标不在控制点内，即for循环的变量不满足循环条件跳出循环时，就返回-1。2-让SetBox-、SetSizeBox-、StartDragging-、OnMouse-这几个函数去根据返回值更新相应控制点的情况-设置控制点中心的坐标。3-OnPaint-函数中，将刷新绘制直线改为绘制贝塞尔曲线。同时将原来单个的控制点判断改为一个循环，对所有的控制点点击情况进行判断。4-为了看起来美观，自己挪移了贝塞尔曲线的位置并改动了相应的坐标-让它到中间的一个指定位置，然后绘制了相应的坐标系，并在控制台中打印了相应控制点的坐标。-界面优化及其他相关" class="headerlink" title="这里实现的主要操作就是对老师的代码进行魔改。老师定义了一个结构体BoxT，用来存储拖拽事件相应情况，控制点大小和坐标。示例的拖拽程序中，只有一个控制点和一条原点出发到达拖拽点的直线，为了实现效果，自己要对其进行改动，将控制点由单个变量改为数组，用来实现多个控制点的效果。这里自己删除了老师给的InitScene()这个初始化函数（没必要），对SetBox()、SetSizeBox()、StartDragging()添加了调用的形参，对InBox()、EndDragging()、RenderBox()、OnPaint()进行了逻辑的改动，让整个绘制控制系统支持多个控制点的绘制和控制。老师给的代码：改动的主要逻辑是：1.让InBox()在不同的控制点内返回不同的值。    通过一个for循环，判断在第几个点内，便返回相应的数组下标值，告诉系统去更改相应的控制点的绘制情况。    如果判断出来鼠标不在控制点内，即for循环的变量不满足循环条件跳出循环时，就返回-1。2.让SetBox()、SetSizeBox()、StartDragging()、OnMouse()这几个函数去根据返回值更新相应控制点的情况,设置控制点中心的坐标。3.OnPaint()函数中，将刷新绘制直线改为绘制贝塞尔曲线。同时将原来单个的控制点判断改为一个循环，对所有的控制点点击情况进行判断。4.为了看起来美观，自己挪移了贝塞尔曲线的位置并改动了相应的坐标,让它到中间的一个指定位置，然后绘制了相应的坐标系，并在控制台中打印了相应控制点的坐标。# 界面优化及其他相关"></a>这里实现的主要操作就是对老师的代码进行<del>魔改</del>。<br>老师定义了一个结构体BoxT，用来存储<code>拖拽事件相应情况</code>，<code>控制点大小</code>和<code>坐标</code>。<br>示例的拖拽程序中，只有一个控制点和一条原点出发到达拖拽点的直线，为了实现效果，自己要对其进行改动，将控制点由单个变量改为数组，用来实现多个控制点的效果。<br>这里自己删除了老师给的InitScene()这个初始化函数（没必要），对SetBox()、SetSizeBox()、StartDragging()添加了调用的形参，对InBox()、EndDragging()、RenderBox()、OnPaint()进行了逻辑的改动，让整个绘制控制系统支持多个控制点的绘制和控制。<br>老师给的代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">BoxT</span>&#123;</span></span><br><span class="line">	<span class="type">double</span> cx;</span><br><span class="line">	<span class="type">double</span> cy;</span><br><span class="line">	<span class="type">double</span> size;</span><br><span class="line">	<span class="type">char</span> dragging;</span><br><span class="line">&#125; g_box;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PointT</span>&#123;</span></span><br><span class="line">	<span class="type">double</span> x;</span><br><span class="line">	<span class="type">double</span> y;</span><br><span class="line">&#125;g_dragstart;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">InitScene</span><span class="params">()</span>&#123;</span><br><span class="line">	g_box.cx = <span class="number">0</span>;</span><br><span class="line">	g_box.cy = <span class="number">0</span>;</span><br><span class="line">	g_box.size = <span class="number">0.2</span>;</span><br><span class="line">	g_box.dragging = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">SetBox</span><span class="params">(<span class="type">double</span> cx, <span class="type">double</span> cy)</span>&#123;</span><br><span class="line">	g_box.cx = cx;</span><br><span class="line">	g_box.cy = cy;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">SetSizeBox</span><span class="params">(<span class="type">double</span> cx, <span class="type">double</span> cy, <span class="type">double</span> size)</span>&#123;</span><br><span class="line">	g_box.cx = cx; </span><br><span class="line">	g_box.cy = cy;</span><br><span class="line">	g_box.size = size; </span><br><span class="line">&#125; </span><br><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">InBox</span><span class="params">(<span class="type">double</span> x, <span class="type">double</span> y)</span>&#123;	</span><br><span class="line">	<span class="keyword">return</span> x &gt;= g_box.cx &amp;&amp; x &lt;= g_box.cx + g_box.size &amp;&amp; y &gt;= g_box.cy &amp;&amp; y &lt;= g_box.cy + g_box.size;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">StartDragging</span><span class="params">(<span class="type">double</span> x, <span class="type">double</span> y)</span>&#123;</span><br><span class="line">	g_box.dragging = <span class="number">1</span>;</span><br><span class="line">	g_dragstart.x = g_box.cx - x;</span><br><span class="line">	g_dragstart.y = g_box.cy - y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">EndDragging</span><span class="params">()</span>&#123;	</span><br><span class="line">	g_box.dragging = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">RenderBox</span><span class="params">(<span class="keyword">struct</span> BoxT* box)</span>&#123;</span><br><span class="line">	SetPenColor(box-&gt;dragging?<span class="string">&quot;Red&quot;</span>:<span class="string">&quot;Black&quot;</span>); 	</span><br><span class="line">    SetPenSize(box-&gt;dragging?<span class="number">2</span>:<span class="number">1</span>);</span><br><span class="line">	DrawBox(box-&gt;cx, box-&gt;cy, box-&gt;size, box-&gt;size);	</span><br><span class="line">&#125;<span class="comment">/*拖拽控制点时的控制变化*/</span></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">OnPaint</span><span class="params">()</span>&#123;</span><br><span class="line">	ClearWindow();		    </span><br><span class="line">    RenderBox(&amp;g_box);        </span><br><span class="line">    MovePen(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">	DrawLineTo(g_box.cx, g_box.cy);</span><br><span class="line">&#125;<span class="comment">/*刷新绘制界面*/</span></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">OnMouse</span> <span class="params">(<span class="type">int</span> x, <span class="type">int</span> y, <span class="type">int</span> button, <span class="type">int</span> event)</span>&#123;	</span><br><span class="line">	<span class="type">double</span> sx, sy;</span><br><span class="line">	sx = WindowX(x);</span><br><span class="line">	sy = WindowY(y);</span><br><span class="line">	<span class="keyword">if</span>(button == LEFT_BUTTON &amp;&amp; event == BUTTON_DOWN)&#123;				</span><br><span class="line">		<span class="keyword">if</span>(InBox(sx, sy))&#123;</span><br><span class="line">			StartDragging(sx, sy);</span><br><span class="line">			RefreshWindow();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (button == LEFT_BUTTON &amp;&amp; event == BUTTON_UP)&#123;</span><br><span class="line">		EndDragging();</span><br><span class="line">		RefreshWindow();</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (g_box.dragging &amp;&amp; event == MOUSEMOVE)&#123;				</span><br><span class="line">		SetBox(sx + g_dragstart.x, sy + g_dragstart.y);</span><br><span class="line">		RefreshWindow();			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;<span class="comment">/*鼠标响应事件判断*/</span></span><br></pre></td></tr></table></figure><br>改动的主要逻辑是：<br>1.让InBox()在不同的控制点内返回不同的值。<br>    通过一个for循环，判断在第几个点内，便返回相应的数组下标值，告诉系统去更改相应的控制点的绘制情况。<br>    如果判断出来鼠标不在控制点内，即for循环的变量不满足循环条件跳出循环时，就返回-1。<br>2.让SetBox()、SetSizeBox()、StartDragging()、OnMouse()这几个函数去根据返回值更新相应控制点的情况,设置控制点中心的坐标。<br>3.OnPaint()函数中，将刷新绘制直线改为绘制贝塞尔曲线。同时将原来单个的控制点判断改为一个循环，对所有的控制点点击情况进行判断。<br>4.为了看起来美观，自己挪移了贝塞尔曲线的位置并改动了相应的坐标,让它到中间的一个指定位置，然后绘制了相应的坐标系，并在控制台中打印了相应控制点的坐标。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">SetBox</span><span class="params">(<span class="type">double</span> cx, <span class="type">double</span> cy,<span class="type">int</span> i)</span>&#123;</span><br><span class="line">	g_box[i].cx = cx;</span><br><span class="line">	g_box[i].cy = cy;</span><br><span class="line">&#125;<span class="comment">/*设置点的坐标*/</span> </span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">SetSizeBox</span><span class="params">(<span class="type">double</span> cx, <span class="type">double</span> cy, <span class="type">double</span> size,<span class="type">int</span> i)</span>&#123;</span><br><span class="line">	g_box[i].cx = cx; j</span><br><span class="line">	g_box[i].cy = cy;</span><br><span class="line">	g_box[i].size = size; </span><br><span class="line">&#125; <span class="comment">/*设置控制点的大小*/</span> </span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">InBox</span><span class="params">(<span class="type">double</span> x, <span class="type">double</span> y)</span>&#123;	</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;numberofpoint;i++)</span><br><span class="line">	&#123;<span class="keyword">if</span>(x &gt;= g_box[i].cx-g_box[i].size/<span class="number">2</span> &amp;&amp; x &lt;= g_box[i].cx + g_box[i].size/<span class="number">2</span> &amp;&amp; y &gt;= g_box[i].cy-g_box[i].size/<span class="number">2</span>&amp;&amp; y &lt;= g_box[i].cy + g_box[i].size/<span class="number">2</span>)</span><br><span class="line">	<span class="keyword">return</span> i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(i==numberofpoint)</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	</span><br><span class="line">&#125;<span class="comment">/*在哪个点内的判断*/</span> </span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">StartDragging</span><span class="params">(<span class="type">double</span> x, <span class="type">double</span> y,<span class="type">int</span> i)</span>&#123;</span><br><span class="line">	g_box[i].dragging = <span class="number">1</span>;</span><br><span class="line">	g_dragstart.x = g_box[i].cx - x;</span><br><span class="line">	g_dragstart.y = g_box[i].cy - y;</span><br><span class="line">&#125;<span class="comment">/*开始拖拽方块*/</span> </span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">EndDragging</span><span class="params">()</span>&#123;	</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;numberofpoint;i++)</span><br><span class="line">	g_box[i].dragging = <span class="number">0</span>;</span><br><span class="line">&#125;<span class="comment">/*停止拖拽*/</span> </span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">RenderBox</span><span class="params">(BoxT* box)</span>&#123;</span><br><span class="line">	SetPenColor(box-&gt;dragging?<span class="string">&quot;Red&quot;</span>:<span class="string">&quot;Black&quot;</span>); 	</span><br><span class="line">    SetPenSize(box-&gt;dragging?<span class="number">2</span>:<span class="number">1</span>);</span><br><span class="line">	DrawBox(box-&gt;cx, box-&gt;cy, box-&gt;size, box-&gt;size);	</span><br><span class="line">&#125; <span class="comment">/*点击时候的正方形状态切换*/</span> </span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">OnPaint</span><span class="params">()</span>&#123;</span><br><span class="line">	ClearWindow();</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;numberofpoint;i++)</span><br><span class="line">	RenderBox(&amp;g_box[i]);</span><br><span class="line">	SetPenColor(<span class="string">&quot;Black&quot;</span>);</span><br><span class="line">	SetPenSize(<span class="number">1</span>);</span><br><span class="line">	asis();</span><br><span class="line">	MovePen(g_box[<span class="number">0</span>].cx,g_box[<span class="number">0</span>].cy);        </span><br><span class="line">    createbezier(g_box,numberofpoint);</span><br><span class="line">&#125; <span class="comment">/*刷新作图绘制*/</span> </span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">OnMouse</span> <span class="params">(<span class="type">int</span> x, <span class="type">int</span> y, <span class="type">int</span> button, <span class="type">int</span> event)</span>&#123;	</span><br><span class="line">	<span class="type">double</span> sx, sy;</span><br><span class="line">	sx = WindowX(x);</span><br><span class="line">	sy = WindowY(y);</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(button == LEFT_BUTTON &amp;&amp; event == BUTTON_DOWN)&#123;				</span><br><span class="line">		<span class="keyword">if</span>(InBox(sx, sy)&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">			StartDragging(sx, sy,InBox(sx, sy));</span><br><span class="line">			RefreshWindow();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (button == LEFT_BUTTON &amp;&amp; event == BUTTON_UP)&#123;</span><br><span class="line">		EndDragging(InBox(sx, sy));</span><br><span class="line">		RefreshWindow();</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (g_box[InBox(sx, sy)].dragging &amp;&amp; event == MOUSEMOVE)&#123;				</span><br><span class="line">		<span class="comment">//ClearRect(g_box.cx, g_box.cy, g_box.size);</span></span><br><span class="line">		SetBox(sx + g_dragstart.x, sy + g_dragstart.y,InBox(sx, sy));</span><br><span class="line">		RefreshWindow();			</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="comment">/*鼠标事件的响应与判断*/</span> </span><br></pre></td></tr></table></figure><br># 界面优化及其他相关</h2><p>回到主程序，通过初始化相关的设定完成界面设定，然后通过<br><code>rgisterOnPaintEvent(OnPaint);</code><br><code>registerMouseEvent(OnMouse);</code><br>两个函数读取相应的数据，进行界面的响应和函数值的反馈。</p>
 <h1 id="一些不足的地方："><a href="#一些不足的地方：" class="headerlink" title="一些不足的地方："></a>一些不足的地方：</h1><hr>
 <p>1.控制点创建的还是有上限，而且由于未采用高精度算法，可创建点y有限。<br>2.坐标系的绘制是基于一开始的创建窗口情况画的，如果扩大了窗口范围会看到坐标系缺失的地方<br>3.缺乏相应的标识来提醒用户控制点的排列顺序，诸如$P_1,P_2,P_3,P_4$之类的标识点。<br>4.响应不及时，屏幕会出现暂时白屏的情况，需要局部刷新提高运算速度。</p>
-
-      
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://loyunemo.github.io/loyunemo.github.io/2022/07/03/C-programming/" data-id="clb56gy3l0001xovi85yvg9rt" data-title="C-programming" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/loyunemo.github.io/tags/C-programming/" rel="tag">C-programming</a></li></ul>
-
-    </footer>
-  </div>
-  
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://loyunemo.github.io/loyunemo.github.io/2022/07/03/C-programming/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://loyunemo.github.io/loyunemo.github.io/2022/07/03/C-programming/";
+            const title         = "「C-programming」";
+            const excerpt       = `专题2-图形交互编程-一些基本的吐槽&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/loyunemo.github.io/tags/C-programming/" rel="tag">C-programming</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2022-07-06T17:22:14.006Z" itemprop="dateModified">最后编辑：2022-07-07</time>
+                </div>
+            </div>
+        </footer>
+    </div>
     
-<nav id="article-nav">
-  
-    <a href="/loyunemo.github.io/2022/07/11/instruction/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          instruction
-        
-      </div>
-    </a>
-  
-  
-    <a href="/loyunemo.github.io/2022/07/02/test/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">test</div>
-    </a>
-  
-</nav>
-
-  
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" test" href="/loyunemo.github.io/2022/07/02/test/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" instruction" href="/loyunemo.github.io/2022/07/11/instruction/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
 </article>
 
+        
 
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/loyunemo.github.io/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                7
+            </span>
+        </a>
+        <a class="meta-item" href="/loyunemo.github.io/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                3
+            </span>
+        </a>
+        <a class="meta-item" href="/loyunemo.github.io/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                5
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/loyunemo.github.io/categories/C-programming/">C-programming</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/loyunemo.github.io/categories/Demo/">Demo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/loyunemo.github.io/categories/takedown/">takedown</a><span class="category-list-count">1</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/loyunemo.github.io/tags/C-programming/" style="font-size: 0.6em;">C-programming</a> <a href="/loyunemo.github.io/tags/daily/" style="font-size: 0.6em;">daily</a> <a href="/loyunemo.github.io/tags/test/" style="font-size: 0.6em;">test</a> <a href="/loyunemo.github.io/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 0.6em;">游记</a> <a href="/loyunemo.github.io/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 0.6em;">随笔</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/loyunemo.github.io/2022/12/01/hello-world/"><i class="fa  fa-book"></i> Hello World</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/loyunemo.github.io/2022/11/17/start/"><i class="fa  fa-book"></i> start</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/loyunemo.github.io/2022/10/21/sleep/"><i class="fa  fa-book"></i> sleep</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/loyunemo.github.io/2022/07/17/guizhou/"><i class="fa  fa-book"></i> 贵州社会实践</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/loyunemo.github.io/2022/07/11/instruction/"><i class="fa  fa-book"></i> instruction</a>
+            
+          
+        
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
 </section>
         
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/loyunemo.github.io/categories/C-programming/">C-programming</a></li><li class="category-list-item"><a class="category-list-link" href="/loyunemo.github.io/categories/Demo/">Demo</a></li><li class="category-list-item"><a class="category-list-link" href="/loyunemo.github.io/categories/takedown/">takedown</a></li></ul>
+        </div>
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/loyunemo.github.io/tags/C-programming/" rel="tag">C-programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/loyunemo.github.io/tags/daily/" rel="tag">daily</a></li><li class="tag-list-item"><a class="tag-list-link" href="/loyunemo.github.io/tags/test/" rel="tag">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/loyunemo.github.io/tags/%E6%B8%B8%E8%AE%B0/" rel="tag">游记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/loyunemo.github.io/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/CandyUnion"><i class="fa fa-telegram"></i></a></li>
+                        
+                        
+                        
+                        <li><a target="_blank" rel="me" href="https://nya.one/@Candinya"><i class="fa fa fa-share-alt-square"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/loyunemo"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2022 LoyuNemo的魔域空间 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by LoyuNemo.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <a href="https://github.io" target="_blank">Github Pages</a></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/loyunemo.github.io/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/loyunemo.github.io/tags/C-programming/" style="font-size: 10px;">C-programming</a> <a href="/loyunemo.github.io/tags/daily/" style="font-size: 10px;">daily</a> <a href="/loyunemo.github.io/tags/test/" style="font-size: 10px;">test</a> <a href="/loyunemo.github.io/tags/%E6%B8%B8%E8%AE%B0/" style="font-size: 10px;">游记</a> <a href="/loyunemo.github.io/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/loyunemo.github.io/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/loyunemo.github.io/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/loyunemo.github.io/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/loyunemo.github.io/archives/2022/07/">七月 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/loyunemo.github.io/2022/12/01/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/loyunemo.github.io/2022/11/17/start/">start</a>
-          </li>
-        
-          <li>
-            <a href="/loyunemo.github.io/2022/10/21/sleep/">sleep</a>
-          </li>
-        
-          <li>
-            <a href="/loyunemo.github.io/2022/07/17/guizhou/">贵州社会实践</a>
-          </li>
-        
-          <li>
-            <a href="/loyunemo.github.io/2022/07/11/instruction/">instruction</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 LoyuNemo<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
 </footer>
+</div>
+</div>
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/loyunemo.github.io/" class="mobile-nav-link">Home</a>
-  
-    <a href="/loyunemo.github.io/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+        <script defer src="/loyunemo.github.io/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/loyunemo.github.io/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/loyunemo.github.io/";
+</script>
+
+
+    <script async src="/loyunemo.github.io/js/candy.min.js"></script>
+
+
+
+    <script defer src="/loyunemo.github.io/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
     
-
-
-<script src="/loyunemo.github.io/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/loyunemo.github.io/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/loyunemo.github.io/js/script.js"></script>
+    <script defer src="/loyunemo.github.io/vendors/meting@2.0.1/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="3204190542"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
 
 
 
+    <script defer src="/loyunemo.github.io/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/loyunemo.github.io/vendors/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/loyunemo.github.io/js/kratosr.min.js"></script>
+<script defer src="/loyunemo.github.io/js/pjax.min.js"></script>
 
 
-  </div>
-</body>
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
 </html>
